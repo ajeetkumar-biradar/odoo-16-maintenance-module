@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_maintenance_form_inherit" model="ir.ui.view">
+        <field name="name">maintenance.equipment.category.form.inherited</field>
+        <field name="model">maintenance.equipment.category</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_category_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="cat_img" widget="image" class="oe_avatar img img-fluid "/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

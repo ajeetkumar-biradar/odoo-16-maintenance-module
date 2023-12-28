@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_maintenance_equipment_status_tree" model="ir.ui.view">
+        <field name="name">maintenance.equipment.status.tree</field>
+        <field name="model">maintenance.equipment.status</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="status" widget="text"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_equipment_status" model="ir.actions.act_window">
+        <field name="name">Equipment Status</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">maintenance.equipment.status</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_equipment_status"
+              name="Equipment Status"
+              parent="maintenance.menu_maintenance_configuration"
+              action="action_equipment_status"
+              sequence="20"/>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+maintenance_equipment_status_menu.access_maintenance_equipment_status,access_maintenance_equipment_status,maintenance_equipment_status_menu.model_maintenance_equipment_status,base.group_user,1,1,1,1

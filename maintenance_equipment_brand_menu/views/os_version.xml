@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_operating_system_version_form" model="ir.ui.view">
+        <field name="name">maintenance.equipment.os.version.form</field>
+        <field name="model">maintenance.equipment.os.version</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="os_id"/>
+                        <field name="version"/>
+                        <field name="is_active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_operating_system_version_tree" model="ir.ui.view">
+        <field name="name">maintenance.equipment.os.version.tree</field>
+        <field name="model">maintenance.equipment.os.version</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="os_id"/>
+                <field name="version"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_operating_system_version" model="ir.actions.act_window">
+        <field name="name">OS Version</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">maintenance.equipment.os.version</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_operating_system_version"
+              name="OS Version"
+              parent="maintenance.menu_maintenance_configuration"
+              action="action_operating_system_version"
+              sequence="20"/>
+</odoo>

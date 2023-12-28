@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Kanban view for maintenance.equipment.category -->
+        <record id="view_equipment_category_kanban" model="ir.ui.view">
+            <field name="name">maintenance.equipment.category.kanban</field>
+            <field name="model">maintenance.equipment.category</field>
+            <field name="inherit_id" ref="maintenance.view_maintenance_equipment_category_kanban"/>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="mb4">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                </div>
+                                <field name="cat_img" widget="image" style="max-height: 120px; max-width: 120px;"/>
+                                <div class="row mt4">
+                                    <div class="col-6">
+                                        <span class="badge rounded-pill">
+                                            <strong style="font-size: 14px;">Equipments:</strong>
+                                            <field name="equipment_count" style="font-size: 14px;"/>
+                                        </span>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <span class="badge rounded-pill">
+                                            <strong style="font-size: 14px;">Maintenance:</strong>
+                                            <field name="maintenance_count" style="font-size: 14px;"/>
+                                        </span>
+                                        <field name="technician_user_id" widget="many2one_avatar_user"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>

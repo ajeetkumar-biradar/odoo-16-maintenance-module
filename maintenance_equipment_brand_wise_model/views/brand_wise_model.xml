@@ -1,0 +1,18 @@
+<odoo>
+    <record id="view_maintenance_form_inherit" model="ir.ui.view">
+        <field name="name">maintenance.equipment.form.inherited</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='location']" position="after">
+                <field name="brand_id" domain="[('is_active', '=', True)]"/>
+                <field name="model_id" widget="many2one_tags" readonly="0" options="{'no_create': True}"
+                       domain="[('brand', '=', brand_id),('is_active', '=', True)]"/>
+                <field name="status_id"/>
+                <field name="os_id"/>
+                <field name="version_id"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
